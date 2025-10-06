@@ -1,0 +1,533 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: -apple-system, sans-serif;
+}
+
+/* CSS Variables for Theme Colors */
+:root {
+  --bg-color: #fff;
+  --snd-bg-color: #d5fdf9;
+  --text-color: #000;
+  --main-color: #007f73;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 5%;
+  background: var(--main-color);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+}
+.logo {
+  font-size: 3rem;
+  color: var(--bg-color);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+.navbar a {
+  font-size: 1.9rem;
+  color: var(--bg-color);
+  margin-left: 4rem;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--text-color);
+}
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--bg-color);
+  cursor: pointer;
+  display: none;
+}
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-img img {
+  width: 25vw; /* Responsive width: 25% of the viewport */
+  border-radius: 50%; /* Makes the image perfectly circular */
+  box-shadow: 0 0 25px var(--main-color); /* Soft glow using your main color */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  animation: floatImage 4s ease-in-out infinite; /* Smooth floating animation */
+  transition: 0.4s ease; /* Smooth transition for hover effects */
+}
+
+.home-img img:hover {
+  box-shadow: 
+    0 0 25px var(--main-color),
+    0 0 35px var(--main-color),
+    0 0 45px var(--main-color); /* Intensifies glow on hover */
+}
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.home-content {
+  margin-left: 5rem; /* Adds space to the left of the content */
+}
+
+.home-content h3 {
+  font-size: 3.7rem; /* Large, bold heading */
+  font-weight: 700;  /* Makes the text bold */
+}
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 2rem; /* Adds spacing below the second h3 element */
+}
+
+span {
+  color: var(--main-color); /* Applies your theme color to all <span> elements */
+}
+
+.home-content h1 {
+  font-size: 6rem;     /* Large, bold headline */
+  font-weight: 700;    /* Strong emphasis */
+  line-height: 1.3;    /* Balanced vertical spacing for readability */
+}
+.home-content p {
+  font-size: 1.6rem; /* Sets readable paragraph text size */
+}
+
+.social-media a {
+  display: inline-flex; /* Allows icon and link to align flexibly */
+  justify-content: center; /* Centers icon horizontally */
+  align-items: center;     /* Centers icon vertically */
+  width: 42px;
+  height: 42px;
+  background: transparent; /* Keeps background clean */
+  border: 0.2rem solid var(--main-color); /* Circular border with theme color */
+  border-radius: 50%;      /* Makes the icon container circular */
+  font-size: 2rem;         /* Icon size */
+  color: var(--main-color); /* Icon color */
+  margin: 3rem 1.5rem 3rem 0; /* Top, right, bottom, left spacing */
+  transition: 0.3s ease;   /* Smooth hover effect */
+}
+
+.social-media a:hover {
+  transform: scale(1.2) translateY(-10px); /* Enlarges and lifts the icon */
+  background-color: var(--main-color);    /* Fills background with theme color */
+  color: var(--bg-color);                 /* Changes icon color to background color for contrast */
+  box-shadow: 0 0 25px var(--main-color);   /* Adds a vertical glow beneath the icon */
+}
+.btn {
+  display: inline-block;              /* Makes the button behave like a block but flow inline */
+  padding: 1rem 2.8rem;               /* Adds space inside the button (top/bottom, left/right) */
+  background: var(--main-color);     /* Uses your theme's main color for the background */
+  border-radius: 4rem;               /* Rounds the button edges for a pill shape */
+  box-shadow: none;                  /* Removes any default shadow */
+  font-size: 1.6rem;                 /* Sets readable text size */
+  color: var(--bg-color);            /* Sets text color using your background color variable */
+  letter-spacing: 0.1rem;            /* Slight spacing between letters for polish */
+  font-weight: 600;                  /* Makes the text semi-bold */
+  transition: 0.3s ease;             /* Smooth transition for hover effects */
+}
+
+.btn:hover {
+  box-shadow: 0 0 1.6rem var(--main-color); /* Adds a glowing shadow on hover */
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  background: var(--snd-bg-color);
+}
+.about-img img {
+  width: 25vw; /* Responsive width: 25% of the viewport */
+  border: 2px solid var(--main-color); /* Circular border with theme color */
+  border-radius: 50%; /* Makes the image perfectly round */
+  box-shadow: 0 0 25px var(--main-color); /* Soft glow around the image */
+  cursor: pointer; /* Indicates interactivity */
+  transition: 0.4s ease; /* Smooth transition for hover effects */
+}
+
+.about-img img:hover {
+  box-shadow: 
+    0 0 25px var(--main-color),
+    0 0 35px var(--main-color),
+    0 0 45px var(--main-color); /* Intensifies glow on hover */
+}
+.heading {
+  font-size: 6rem;       /* Large, bold section title */
+  text-align: left;      /* Aligns the heading to the left */
+}
+
+.about-content {
+  padding: 0 4rem;       /* Adds horizontal padding for breathing room */
+}
+
+.about-content h2 {
+  text-align: left;      /* Left-aligns the subheading */
+  line-height: 1.2;      /* Controls vertical spacing for readability */
+}
+.about-content h3 {
+  font-size: 3rem;
+}
+
+.about-content p {
+  font-size: 1.6rem;
+  margin: 2rem 0 3rem;
+}
+/* Services Section Heading */
+.services h2 {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+/* Services Container Layout */
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+/* Service Box Styling */
+.services-container .services-box {
+  flex: 1 1 30rem;
+  background: var(--snd-bg-color);
+  padding: 6rem 2rem 6rem;
+  border-radius: 2rem;
+  text-align: center;
+  border: 0.3rem solid var(--bg-color);
+  transition: 0.3s ease;
+}
+/* Hover Effect for Service Box */
+.services-container .services-box:hover {
+  border-color: var(--main-color);
+  transform: scale(1.02);
+}
+
+/* Icon Styling */
+.services-box i {
+  font-size: 7rem;
+  color: var(--main-color);
+}
+
+/* Heading Styling */
+.services-box h3 {
+  font-size: 2.6rem;
+}
+/* Paragraph Styling in Service Box */
+.services-box p {
+  font-size: 1.6rem;
+  margin: 1rem 0 3rem;
+}
+/* Testimonial Section Background */
+.testimonial {
+  background: var(--snd-bg-color);
+}
+
+/* Testimonial Box Layout */
+.testimonial-box {
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* Testimonial Section Heading */
+.testimonial .heading {
+  margin-bottom: 5rem;
+}
+
+/* Testimonial Image Styling */
+.testimonial-box img {
+  width: 18rem;
+  border-radius: 15px;
+  border: 3px solid var(--main-color);
+  box-shadow: 0 0 25px var(--main-color);
+}
+/* Testimonial Grid Wrapper */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* Individual Testimonial Item */
+.testimonial-item {
+  min-height: 450px;
+  max-width: 450px;
+  background: var(--bg-color);
+  border: 0.3rem solid var(--bg-color);
+  border-radius: 2rem;
+  margin: 0 2rem;
+  padding: 20px 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  gap: 1.5rem;
+  color: var(--text-color);
+  transition: 0.3s ease;
+
+}
+.testimonial-item:hover {
+  border-color: var(--main-color);
+  transform: scale(1.02);
+}
+/* Testimonial Heading */
+.testimonial-item h2 {
+  font-size: 3rem;
+}
+
+/* Testimonial Paragraph */
+.testimonial-item p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+ #test { 
+  color: var(--main-color); 
+  font-size: 2rem;
+  }
+  #test:hover {
+  transform: scale(1.0) translateY(-10px); /* Enlarges and lifts the icon */
+  /* background-color: var(--main-color);    Fills background with theme color */
+  color: var(--bg-color);                 /* Changes icon color to background color for contrast */
+  box-shadow: 0 0 25px var(--main-color);   /* Adds a vertical glow beneath the icon */
+}
+/* #star {
+  color: gold;
+  font-size: 2rem;
+} */
+/* Contact Section Styling */
+.contact {
+  background: var(--bg-color);
+}
+.contact .heading {
+  text-align: center;
+}
+
+
+/* Contact Heading */
+.contact h2 {
+  margin-bottom: 3rem;
+  color: var(--main-color);
+}
+
+/* Contact Form Layout */
+.contact form {
+  max-width: 80rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contact form .input-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Input and Textarea Styling */
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background: var(--bg-color);
+  border-radius: 0.5rem;
+  border: 0.25rem solid var(--main-color);
+  margin: 0.7rem 0;
+  resize: none;
+}
+.contact form .input-box input {
+  width: 49%;
+  margin: 0.7rem 0.35rem;
+}
+
+/* Submit Button Spacing */
+.contact form .btn {
+  margin-top: 2rem;
+}
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0;
+  background-color: var(--snd-bg-color);
+}
+
+/* Social Icons in Footer */
+.footer .social {
+  text-align: center;
+  padding-bottom: 25px;
+  color: var(--main-color);
+}
+.footer .social a {
+    font-size: 25px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+.footer .social a:hover {
+    transform: scale(1.2) translateY(-10px);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.footer .copyright {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-color);
+}
+/* Responsive */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+      section {
+      padding: 10rem 3%;
+  }
+      .services {
+      padding: 7rem;
+  }
+
+  .testimonial .wrapper {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .contact form .input-box input {
+      width: 100%;
+  }
+
+  .footer {
+      padding: 2rem 3%;
+  }
+
+}
+@media (max-width: 991px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 255px;
+        min-height: 100vh;
+        display:flex;
+        flex-direction: column;
+        background: var(--main-color);
+        transition: all 0.5s ease;
+        backdrop-filter: blur(10px);
+    }
+    .navbar a {
+    display: block;
+    padding: 17px;
+    font-size: 22px;
+}
+
+.navbar.active {
+    right: 0;
+}
+.home {
+    flex-direction: column;
+}
+
+.home-content h3 {
+    font-size: 2.6rem;
+}
+
+.home-content h1 {
+    font-size: 5rem;
+}
+
+.home-content {
+    order: 2;
+    margin-left: 1rem;
+}
+.home-img img {
+    width: 70vw;
+    margin-top: 4rem;
+}
+
+.about {
+    flex-direction: column-reverse;
+}
+
+.about-img img {
+    width: 70vw;
+    margin-top: 4rem;
+}
+.services h2 {
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 617px) {
+    .home-img img {
+        width: 70vw;
+        margin-top: 8rem;
+    }
+}
+@media (max-width: 617px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+
+}
+
+
+
+
+
